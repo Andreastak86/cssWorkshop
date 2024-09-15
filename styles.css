@@ -1,4 +1,3 @@
-/* Reset for å sikre konsistent stil på tvers av nettlesere */
 * {
     margin: 0;
     padding: 0;
@@ -9,38 +8,55 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #dfdfdfff;
+    background-color: #dddbdbff; /* Lys grå bakgrunn */
     color: #333;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
 /* Header */
 .header {
     background: linear-gradient(
         to right,
-        #004d00,
-        #009900,
-        #66ff66,
-        #ffff66
-    ); /* Mørke grønn til lys gul gradient */
+        #1e3a8a,
+        #3b82f6,
+        #60a5fa,
+        #a5b4fc
+    ); /* Blå gradient */
     color: white;
     text-align: center;
     padding: 2rem;
+    animation: fadeIn 1s ease-out; /* Fade-in animation */
 }
 
 .header__title {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    transition: transform 0.3s ease; /* Smooth title transform */
+}
+
+.header__title:hover {
+    transform: scale(1.1); /* Slightly enlarge title on hover */
 }
 
 /* Navigation */
 .nav {
     background: linear-gradient(
         to right,
-        #333,
-        #666
-    ); /* Mørk grå til lys grå gradient */
+        #4b5563,
+        #9ca3af
+    ); /* Gråblå gradient */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    transition: background 0.3s ease; /* Smooth background transition */
+}
+
+.nav:hover {
+    background: linear-gradient(
+        to right,
+        #2d3748,
+        /* Darker gråblå */ #6b7280 /* Lighter gråblå */
+    ); /* Darker gradient on hover */
 }
 
 .nav__list {
@@ -58,10 +74,28 @@ body {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
+    position: relative;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav__link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    transition: width 0.3s ease; /* Smooth underline animation */
 }
 
 .nav__link:hover {
-    text-decoration: underline;
+    color: #e2e8f0; /* Slightly lighter color on hover */
+}
+
+.nav__link:hover::after {
+    width: 100%; /* Underline expands on hover */
 }
 
 /* Main content */
@@ -80,6 +114,12 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 80%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and shadow transition */
+}
+
+.section:hover {
+    transform: translateY(-5px); /* Lift section on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
 }
 
 .section__title {
@@ -112,7 +152,7 @@ body {
 /* Responsivt grid for bilder i galleri */
 .gallery {
     display: flex;
-    flex-direction: row; /* Endret fra column */
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-between;
@@ -123,6 +163,11 @@ body {
     max-width: calc(33.333% - 1rem); /* Maks bredde på desktop */
     height: auto;
     border-radius: 5px;
+    transition: transform 0.3s ease; /* Smooth transform */
+}
+
+.gallery__image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 /* Responsive design for images */
@@ -140,11 +185,21 @@ body {
 
 /* Footer */
 .footer {
-    background-color: #333;
+    background-color: #4b5563; /* Mørk gråblå */
     color: white;
     text-align: center;
     padding: 1rem;
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
