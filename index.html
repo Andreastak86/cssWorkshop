@@ -9,83 +9,95 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <header>
-            <h1>Min Drømmereise til Bali</h1>
-            <p>Planlegg din neste ferie til det fantastiske Bali!</p>
+        <header class="header">
+            <h1 class="header__title">Min Drømmereise til Bali</h1>
+            <p class="header__subtitle">
+                Planlegg din neste ferie til det fantastiske Bali!
+            </p>
         </header>
 
-        <nav>
-            <ul>
-                <li><a href="#">Hjem</a></li>
-                <li><a href="#">Reiseruter</a></li>
-                <li><a href="#">Galleri</a></li>
-                <li><a href="#">Kontakt</a></li>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Hjem</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Reiseruter</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Galleri</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#" class="nav__link">Kontakt</a>
+                </li>
             </ul>
         </nav>
 
-        <main>
-            <section>
-                <h2>Om Bali</h2>
-                <p>
+        <main class="main">
+            <section class="section section--about">
+                <h2 class="section__title">Om Bali</h2>
+                <p class="section__text">
                     Bali er kjent for sine vakre strender, kulturarv og
                     fantastiske landskap. Det er et populært reisemål for både
                     eventyrere og de som søker avslapning.
                 </p>
             </section>
 
-            <section>
-                <h2>Reiserute</h2>
-                <div>
-                    <h3>Dag 1: Ankomst</h3>
-                    <p>
+            <section class="section section--itinerary">
+                <h2 class="section__title">Reiserute</h2>
+                <div class="itinerary">
+                    <h3 class="itinerary__day">Dag 1: Ankomst</h3>
+                    <p class="itinerary__description">
                         Du ankommer Bali og blir møtt av en lokal guide som tar
                         deg til hotellet.
                     </p>
 
-                    <h3>Dag 2: Utforsk Ubud</h3>
-                    <p>
+                    <h3 class="itinerary__day">Dag 2: Utforsk Ubud</h3>
+                    <p class="itinerary__description">
                         Besøk de frodige rismarkene, det berømte ape-skogen og
                         de kunstneriske markedene i Ubud.
                     </p>
                 </div>
             </section>
 
-            <section>
-                <h2>Galleri</h2>
-                <div>
+            <section class="section section--gallery">
+                <h2 class="section__title">Galleri</h2>
+                <div class="gallery">
                     <img
                         src="/assets/beach.jpg"
                         alt="Strand på Bali"
-                        height="200px"
-                        width="200px"
+                        class="gallery__image"
                     />
                     <img
                         src="/assets/temple.jpg"
                         alt="Tempel på Bali"
-                        height="200px"
-                        width="200px"
+                        class="gallery__image"
                     />
                     <img
                         src="/assets/rice.jpg"
                         alt="Frodige rismarker på Bali"
-                        height="200px"
-                        width="200px"
+                        class="gallery__image"
                     />
                 </div>
             </section>
 
-            <section>
-                <h2>Bestill din reise</h2>
-                <p>
-                    <a href="https://www.expedia.no/" target="_blank"
+            <section class="section section--booking">
+                <h2 class="section__title">Bestill din reise</h2>
+                <p class="booking__link">
+                    <a
+                        href="https://www.expedia.no/"
+                        target="_blank"
+                        class="booking__link"
                         >Klikk her for å bestille din drømmereise til Bali!</a
                     >
                 </p>
             </section>
         </main>
 
-        <footer>
-            <p>&copy; 2024 Min Drømmereise. Alle rettigheter reservert.</p>
+        <footer class="footer">
+            <p class="footer__text">
+                &copy; 2024 Min Drømmereise. Alle rettigheter reservert.
+            </p>
         </footer>
     </body>
 </html>

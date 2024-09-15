@@ -5,53 +5,67 @@
     box-sizing: border-box;
 }
 
+/* Generell styling */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #dfdfdfff;
     color: #333;
     margin: 0;
     padding: 0;
 }
 
 /* Header */
-header {
-    background-color: #4caf50;
+.header {
+    background: linear-gradient(
+        to right,
+        #004d00,
+        #009900,
+        #66ff66,
+        #ffff66
+    ); /* Mørke grønn til lys gul gradient */
     color: white;
     text-align: center;
     padding: 2rem;
 }
 
-header h1 {
+.header__title {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
 /* Navigation */
-nav ul {
+.nav {
+    background: linear-gradient(
+        to right,
+        #333,
+        #666
+    ); /* Mørk grå til lys grå gradient */
+}
+
+.nav__list {
     display: flex;
     justify-content: center;
     list-style: none;
-    background-color: #333;
     padding: 1rem;
 }
 
-nav ul li {
+.nav__item {
     margin: 0 1rem;
 }
 
-nav ul li a {
+.nav__link {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
 }
 
-nav ul li a:hover {
+.nav__link:hover {
     text-decoration: underline;
 }
 
 /* Main content */
-main {
+.main {
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -59,7 +73,7 @@ main {
 }
 
 /* Section Styling */
-section {
+.section {
     background-color: white;
     margin: 2rem 0;
     padding: 2rem;
@@ -68,33 +82,64 @@ section {
     width: 80%;
 }
 
-/* Flexbox for the itinerary and gallery */
-section div {
+.section__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.section__text {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Flexbox for itinerary and gallery */
+.itinerary,
+.gallery {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-section div img {
-    width: 100%;
+.itinerary__day {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.itinerary__description {
+    font-size: 1rem;
+}
+
+/* Responsivt grid for bilder i galleri */
+.gallery {
+    display: flex;
+    flex-direction: row; /* Endret fra column */
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.gallery__image {
+    flex: 1 1 calc(33.333% - 1rem); /* Tre bilder på rad, minus gapet */
+    max-width: calc(33.333% - 1rem); /* Maks bredde på desktop */
     height: auto;
     border-radius: 5px;
 }
 
-/* Responsivt grid for bilder i galleri */
-section:nth-of-type(3) div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: space-around;
+/* Responsive design for images */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column; /* Kolonne på mobil */
+        align-items: center;
+    }
+
+    .gallery__image {
+        width: 80%; /* Bildebredde på mobil */
+        margin-bottom: 1rem;
+    }
 }
 
-section:nth-of-type(3) div img {
-    width: 30%;
-}
-
-/* Flexbox for footer */
-footer {
+/* Footer */
+.footer {
     background-color: #333;
     color: white;
     text-align: center;
